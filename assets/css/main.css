@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0
+}
+.start-game,
+.end-game {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin-top: -20px;
+    background-color: #333333e3;
+    z-index: 2;
+}
+/* .end-game .control {
+    width: 200px;
+    height: 100;
+    border: 1px solid #0065ff;
+    border-radius: 10px;
+} */
+.start-game span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 20px;
+    background-color: #0065ff;
+    border-radius: 6px;
+    color: white;
+    font-size: 20px;
+    z-index: 3;
+    cursor: pointer;
+}
+.end-game span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 20px;
+    background-color: #0065ff;
+    border-radius: 6px;
+    color: white;
+    font-size: 20px;
+    z-index: 3;
+    cursor: pointer;
+}
+.start-game .control {
+    background-color: #eee;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.start-game .control .input-field {
+    width: 300px;
+    margin: 0 auto;
+}
+.start-game .control .input-field input {
+    padding: 10px;
+    border: 1px solid #0065ff;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 10px;;
+}
+.start-game .control .input-field input:focus {
+    outline: none;
+}
+.start-game .control .control-option {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+.start-game .control .control-option  button {
+    border: 1px solid #0065ff;
+    cursor: pointer;
+    padding: 5px 15px;
+    background-color: #0065ff;
+    border-radius: 6px;
+    color: white;
+    font-size: 20px;
+}
+.container {
+    width: 75%;
+    margin: 20px auto;
+}
+.container .head-container {
+    display: inline-flex;
+    width: calc(100% - 20px);
+    padding: 15px 20px;
+    justify-content: space-between;
+    border: 1px solid #0065ff;
+    font-size: 20px;
+    margin: 10px;
+    background-color: #eee;
+    text-align: center;
+}
+.container .memory-game-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.container .memory-game-blocks .game-block {
+    flex: 0 0 200px;
+    height: 200px;
+    background-color: white;
+    text-align: center;
+    line-height: 200px;
+    font-size: 80px;
+    margin: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.4s;
+    /* min-width: 200px; */
+}
+.container .memory-game-blocks .game-block .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    color: white;
+    border: 1px solid #0065ff;
+    cursor: pointer;
+}
+.container .memory-game-blocks .game-block .front::after {
+    content: "!";
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 80px;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+}
+.container .memory-game-blocks .game-block .back {
+    transform: rotateY(-180deg);
+    color: #0065ff;
+}
+.container .memory-game-blocks .game-block.is-flipped,
+.container .memory-game-blocks .game-block.is-matched {
+    transform: rotateY(180deg);
+}
+.prevent-cursor {
+    pointer-events: none;
+}
