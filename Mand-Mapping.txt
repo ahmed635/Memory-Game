@@ -1,5 +1,0 @@
-# Memory Game
-    01. create html file
-    02. create css file
-    03. create js file
-    04. 
